@@ -1,0 +1,907 @@
+# 1 "/home/crem/zephyrproject/zephyr/misc/empty_file.c"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "/home/crem/zephyrproject/zephyr/boards/arm/psn_board_jlink/psn_jlink.dts" 1
+# 9 "/home/crem/zephyrproject/zephyr/boards/arm/psn_board_jlink/psn_jlink.dts"
+/dts-v1/;
+
+# 1 "/home/crem/zephyrproject/zephyr/dts/arm/atmel/same70q21.dtsi" 1 3 4
+
+
+
+
+
+
+# 1 "/home/crem/zephyrproject/zephyr/dts/common/mem.h" 1 3 4
+# 8 "/home/crem/zephyrproject/zephyr/dts/arm/atmel/same70q21.dtsi" 2 3 4
+# 1 "/home/crem/zephyrproject/zephyr/dts/arm/atmel/same70.dtsi" 1 3 4
+
+
+
+
+
+
+
+# 1 "/home/crem/zephyrproject/zephyr/dts/arm/armv7-m.dtsi" 1 3 4
+
+
+# 1 "/home/crem/zephyrproject/zephyr/dts/common/skeleton.dtsi" 1 3 4
+# 9 "/home/crem/zephyrproject/zephyr/dts/common/skeleton.dtsi" 3 4
+/ {
+ #address-cells = <1>;
+ #size-cells = <1>;
+ chosen { };
+ aliases { };
+};
+# 4 "/home/crem/zephyrproject/zephyr/dts/arm/armv7-m.dtsi" 2 3 4
+
+/ {
+ soc {
+  #address-cells = <1>;
+  #size-cells = <1>;
+  compatible = "simple-bus";
+  interrupt-parent = <&nvic>;
+  ranges;
+
+  nvic: interrupt-controller@e000e100 {
+   #address-cells = <1>;
+   compatible = "arm,v7m-nvic";
+   reg = <0xe000e100 0xc00>;
+   interrupt-controller;
+   #interrupt-cells = <2>;
+  };
+
+  systick: timer@e000e010 {
+   compatible = "arm,armv7m-systick";
+   reg = <0xe000e010 0x10>;
+  };
+ };
+};
+# 9 "/home/crem/zephyrproject/zephyr/dts/arm/atmel/same70.dtsi" 2 3 4
+# 1 "/home/crem/zephyrproject/zephyr/include/dt-bindings/i2c/i2c.h" 1 3 4
+# 10 "/home/crem/zephyrproject/zephyr/dts/arm/atmel/same70.dtsi" 2 3 4
+# 1 "/home/crem/zephyrproject/zephyr/include/dt-bindings/gpio/gpio.h" 1 3 4
+# 11 "/home/crem/zephyrproject/zephyr/dts/arm/atmel/same70.dtsi" 2 3 4
+
+# 1 "/home/crem/zephyrproject/zephyr/dts/arm/atmel/same70-pinctrl.dtsi" 1 3 4
+
+
+
+
+
+
+# 1 "/home/crem/zephyrproject/zephyr/dts/arm/atmel/pinctrl_atmel_sam.h" 1 3 4
+# 10 "/home/crem/zephyrproject/zephyr/dts/arm/atmel/pinctrl_atmel_sam.h" 3 4
+# 1 "/home/crem/zephyrproject/zephyr/include/dt-bindings/dt-util.h" 1 3 4
+# 19 "/home/crem/zephyrproject/zephyr/include/dt-bindings/dt-util.h" 3 4
+# 1 "/home/crem/zephyrproject/zephyr/include/sys/util_macro.h" 1 3 4
+# 34 "/home/crem/zephyrproject/zephyr/include/sys/util_macro.h" 3 4
+# 1 "/home/crem/zephyrproject/zephyr/include/sys/util_internal.h" 1 3 4
+# 18 "/home/crem/zephyrproject/zephyr/include/sys/util_internal.h" 3 4
+# 1 "/home/crem/zephyrproject/zephyr/include/sys/util_loops.h" 1 3 4
+# 19 "/home/crem/zephyrproject/zephyr/include/sys/util_internal.h" 2 3 4
+# 35 "/home/crem/zephyrproject/zephyr/include/sys/util_macro.h" 2 3 4
+# 20 "/home/crem/zephyrproject/zephyr/include/dt-bindings/dt-util.h" 2 3 4
+# 11 "/home/crem/zephyrproject/zephyr/dts/arm/atmel/pinctrl_atmel_sam.h" 2 3 4
+# 8 "/home/crem/zephyrproject/zephyr/dts/arm/atmel/same70-pinctrl.dtsi" 2 3 4
+
+/ {
+ soc {
+  pinctrl@400e0e00 {
+
+   pa8b_afec0_adtrg: pa8b_afec0_adtrg { atmel,pins = < &pioa 8 1 >; };
+   pd9c_afec1_adtrg: pd9c_afec1_adtrg { atmel,pins = < &piod 9 2 >; };
+   pd13a_gmac_gcol: pd13a_gmac_gcol { atmel,pins = < &piod 13 0 >; };
+   pd10a_gmac_gcrs: pd10a_gmac_gcrs { atmel,pins = < &piod 10 0 >; };
+   pd8a_gmac_gmdc: pd8a_gmac_gmdc { atmel,pins = < &piod 8 0 >; };
+   pd9a_gmac_gmdio: pd9a_gmac_gmdio { atmel,pins = < &piod 9 0 >; };
+   pd14a_gmac_grxck: pd14a_gmac_grxck { atmel,pins = < &piod 14 0 >; };
+   pd4a_gmac_grxdv: pd4a_gmac_grxdv { atmel,pins = < &piod 4 0 >; };
+   pd7a_gmac_grxer: pd7a_gmac_grxer { atmel,pins = < &piod 7 0 >; };
+   pd5a_gmac_grx0: pd5a_gmac_grx0 { atmel,pins = < &piod 5 0 >; };
+   pd6a_gmac_grx1: pd6a_gmac_grx1 { atmel,pins = < &piod 6 0 >; };
+   pd11a_gmac_grx2: pd11a_gmac_grx2 { atmel,pins = < &piod 11 0 >; };
+   pd12a_gmac_grx3: pd12a_gmac_grx3 { atmel,pins = < &piod 12 0 >; };
+   pb1b_gmac_gtsucomp: pb1b_gmac_gtsucomp { atmel,pins = < &piob 1 1 >; };
+   pb12b_gmac_gtsucomp: pb12b_gmac_gtsucomp { atmel,pins = < &piob 12 1 >; };
+   pd11c_gmac_gtsucomp: pd11c_gmac_gtsucomp { atmel,pins = < &piod 11 2 >; };
+   pd20c_gmac_gtsucomp: pd20c_gmac_gtsucomp { atmel,pins = < &piod 20 2 >; };
+   pd0a_gmac_gtxck: pd0a_gmac_gtxck { atmel,pins = < &piod 0 0 >; };
+   pd1a_gmac_gtxen: pd1a_gmac_gtxen { atmel,pins = < &piod 1 0 >; };
+   pd17a_gmac_gtxer: pd17a_gmac_gtxer { atmel,pins = < &piod 17 0 >; };
+   pd2a_gmac_gtx0: pd2a_gmac_gtx0 { atmel,pins = < &piod 2 0 >; };
+   pd3a_gmac_gtx1: pd3a_gmac_gtx1 { atmel,pins = < &piod 3 0 >; };
+   pd15a_gmac_gtx2: pd15a_gmac_gtx2 { atmel,pins = < &piod 15 0 >; };
+   pd16a_gmac_gtx3: pd16a_gmac_gtx3 { atmel,pins = < &piod 16 0 >; };
+   pd20b_spi0_miso: pd20b_spi0_miso { atmel,pins = < &piod 20 1 >; };
+   pd21b_spi0_mosi: pd21b_spi0_mosi { atmel,pins = < &piod 21 1 >; };
+   pb2d_spi0_npcs0: pb2d_spi0_npcs0 { atmel,pins = < &piob 2 3 >; };
+   pa31a_spi0_npcs1: pa31a_spi0_npcs1 { atmel,pins = < &pioa 31 0 >; };
+   pd25b_spi0_npcs1: pd25b_spi0_npcs1 { atmel,pins = < &piod 25 1 >; };
+   pd12c_spi0_npcs2: pd12c_spi0_npcs2 { atmel,pins = < &piod 12 2 >; };
+   pd27b_spi0_npcs3: pd27b_spi0_npcs3 { atmel,pins = < &piod 27 1 >; };
+   pd22b_spi0_spck: pd22b_spi0_spck { atmel,pins = < &piod 22 1 >; };
+   pc26c_spi1_miso: pc26c_spi1_miso { atmel,pins = < &pioc 26 2 >; };
+   pc27c_spi1_mosi: pc27c_spi1_mosi { atmel,pins = < &pioc 27 2 >; };
+   pc25c_spi1_npcs0: pc25c_spi1_npcs0 { atmel,pins = < &pioc 25 2 >; };
+   pc28c_spi1_npcs1: pc28c_spi1_npcs1 { atmel,pins = < &pioc 28 2 >; };
+   pd0c_spi1_npcs1: pd0c_spi1_npcs1 { atmel,pins = < &piod 0 2 >; };
+   pc29c_spi1_npcs2: pc29c_spi1_npcs2 { atmel,pins = < &pioc 29 2 >; };
+   pd1c_spi1_npcs2: pd1c_spi1_npcs2 { atmel,pins = < &piod 1 2 >; };
+   pc30c_spi1_npcs3: pc30c_spi1_npcs3 { atmel,pins = < &pioc 30 2 >; };
+   pd2c_spi1_npcs3: pd2c_spi1_npcs3 { atmel,pins = < &piod 2 2 >; };
+   pc24c_spi1_spck: pc24c_spi1_spck { atmel,pins = < &pioc 24 2 >; };
+   pa10c_ssc_rd: pa10c_ssc_rd { atmel,pins = < &pioa 10 2 >; };
+   pd24b_ssc_rf: pd24b_ssc_rf { atmel,pins = < &piod 24 1 >; };
+   pa22a_ssc_rk: pa22a_ssc_rk { atmel,pins = < &pioa 22 0 >; };
+   pb5d_ssc_td: pb5d_ssc_td { atmel,pins = < &piob 5 3 >; };
+   pd10c_ssc_td: pd10c_ssc_td { atmel,pins = < &piod 10 2 >; };
+   pd26b_ssc_td: pd26b_ssc_td { atmel,pins = < &piod 26 1 >; };
+   pb0d_ssc_tf: pb0d_ssc_tf { atmel,pins = < &piob 0 3 >; };
+   pb1d_ssc_tk: pb1d_ssc_tk { atmel,pins = < &piob 1 3 >; };
+   pa4a_twihs0_twck0: pa4a_twihs0_twck0 { atmel,pins = < &pioa 4 0 >; };
+   pa3a_twihs0_twd0: pa3a_twihs0_twd0 { atmel,pins = < &pioa 3 0 >; };
+   pb5a_twihs1_twck1: pb5a_twihs1_twck1 { atmel,pins = < &piob 5 0 >; };
+   pb4a_twihs1_twd1: pb4a_twihs1_twd1 { atmel,pins = < &piob 4 0 >; };
+   pd28c_twihs2_twck2: pd28c_twihs2_twck2 { atmel,pins = < &piod 28 2 >; };
+   pd27c_twihs2_twd2: pd27c_twihs2_twd2 { atmel,pins = < &piod 27 2 >; };
+   pa9a_uart0_urxd0: pa9a_uart0_urxd0 { atmel,pins = < &pioa 9 0 >; };
+   pa10a_uart0_utxd0: pa10a_uart0_utxd0 { atmel,pins = < &pioa 10 0 >; };
+   pa5c_uart1_urxd1: pa5c_uart1_urxd1 { atmel,pins = < &pioa 5 2 >; };
+   pa4c_uart1_utxd1: pa4c_uart1_utxd1 { atmel,pins = < &pioa 4 2 >; };
+   pa6c_uart1_utxd1: pa6c_uart1_utxd1 { atmel,pins = < &pioa 6 2 >; };
+   pd26d_uart1_utxd1: pd26d_uart1_utxd1 { atmel,pins = < &piod 26 3 >; };
+   pd25c_uart2_urxd2: pd25c_uart2_urxd2 { atmel,pins = < &piod 25 2 >; };
+   pd26c_uart2_utxd2: pd26c_uart2_utxd2 { atmel,pins = < &piod 26 2 >; };
+   pd28a_uart3_urxd3: pd28a_uart3_urxd3 { atmel,pins = < &piod 28 0 >; };
+   pd30a_uart3_utxd3: pd30a_uart3_utxd3 { atmel,pins = < &piod 30 0 >; };
+   pd31b_uart3_utxd3: pd31b_uart3_utxd3 { atmel,pins = < &piod 31 1 >; };
+   pd18c_uart4_urxd4: pd18c_uart4_urxd4 { atmel,pins = < &piod 18 2 >; };
+   pd3c_uart4_utxd4: pd3c_uart4_utxd4 { atmel,pins = < &piod 3 2 >; };
+   pd19c_uart4_utxd4: pd19c_uart4_utxd4 { atmel,pins = < &piod 19 2 >; };
+   pb2c_usart0_cts0: pb2c_usart0_cts0 { atmel,pins = < &piob 2 2 >; };
+   pd0d_usart0_dcd0: pd0d_usart0_dcd0 { atmel,pins = < &piod 0 3 >; };
+   pd2d_usart0_dsr0: pd2d_usart0_dsr0 { atmel,pins = < &piod 2 3 >; };
+   pd1d_usart0_dtr0: pd1d_usart0_dtr0 { atmel,pins = < &piod 1 3 >; };
+   pd3d_usart0_ri0: pd3d_usart0_ri0 { atmel,pins = < &piod 3 3 >; };
+   pb3c_usart0_rts0: pb3c_usart0_rts0 { atmel,pins = < &piob 3 2 >; };
+   pb0c_usart0_rxd0: pb0c_usart0_rxd0 { atmel,pins = < &piob 0 2 >; };
+   pb13c_usart0_sck0: pb13c_usart0_sck0 { atmel,pins = < &piob 13 2 >; };
+   pb1c_usart0_txd0: pb1c_usart0_txd0 { atmel,pins = < &piob 1 2 >; };
+   pa25a_usart1_cts1: pa25a_usart1_cts1 { atmel,pins = < &pioa 25 0 >; };
+   pa26a_usart1_dcd1: pa26a_usart1_dcd1 { atmel,pins = < &pioa 26 0 >; };
+   pa28a_usart1_dsr1: pa28a_usart1_dsr1 { atmel,pins = < &pioa 28 0 >; };
+   pa27a_usart1_dtr1: pa27a_usart1_dtr1 { atmel,pins = < &pioa 27 0 >; };
+   pa3b_usart1_loncol1: pa3b_usart1_loncol1 { atmel,pins = < &pioa 3 1 >; };
+   pa29a_usart1_ri1: pa29a_usart1_ri1 { atmel,pins = < &pioa 29 0 >; };
+   pa24a_usart1_rts1: pa24a_usart1_rts1 { atmel,pins = < &pioa 24 0 >; };
+   pa21a_usart1_rxd1: pa21a_usart1_rxd1 { atmel,pins = < &pioa 21 0 >; };
+   pa23a_usart1_sck1: pa23a_usart1_sck1 { atmel,pins = < &pioa 23 0 >; };
+   pb4d_usart1_txd1: pb4d_usart1_txd1 { atmel,pins = < &piob 4 3 >; };
+   pd19b_usart2_cts2: pd19b_usart2_cts2 { atmel,pins = < &piod 19 1 >; };
+   pd4d_usart2_dcd2: pd4d_usart2_dcd2 { atmel,pins = < &piod 4 3 >; };
+   pd6d_usart2_dsr2: pd6d_usart2_dsr2 { atmel,pins = < &piod 6 3 >; };
+   pd5d_usart2_dtr2: pd5d_usart2_dtr2 { atmel,pins = < &piod 5 3 >; };
+   pd7d_usart2_ri2: pd7d_usart2_ri2 { atmel,pins = < &piod 7 3 >; };
+   pd18b_usart2_rts2: pd18b_usart2_rts2 { atmel,pins = < &piod 18 1 >; };
+   pd15b_usart2_rxd2: pd15b_usart2_rxd2 { atmel,pins = < &piod 15 1 >; };
+   pd17b_usart2_sck2: pd17b_usart2_sck2 { atmel,pins = < &piod 17 1 >; };
+   pd16b_usart2_txd2: pd16b_usart2_txd2 { atmel,pins = < &piod 16 1 >; };
+   pa4b_tc0_tclk0: pa4b_tc0_tclk0 { atmel,pins = < &pioa 4 1 >; };
+   pa28b_tc0_tclk1: pa28b_tc0_tclk1 { atmel,pins = < &pioa 28 1 >; };
+   pa29b_tc0_tclk2: pa29b_tc0_tclk2 { atmel,pins = < &pioa 29 1 >; };
+   pa0b_tc0_tioa0: pa0b_tc0_tioa0 { atmel,pins = < &pioa 0 1 >; };
+   pa15b_tc0_tioa1: pa15b_tc0_tioa1 { atmel,pins = < &pioa 15 1 >; };
+   pa26b_tc0_tioa2: pa26b_tc0_tioa2 { atmel,pins = < &pioa 26 1 >; };
+   pa1b_tc0_tiob0: pa1b_tc0_tiob0 { atmel,pins = < &pioa 1 1 >; };
+   pa16b_tc0_tiob1: pa16b_tc0_tiob1 { atmel,pins = < &pioa 16 1 >; };
+   pa27b_tc0_tiob2: pa27b_tc0_tiob2 { atmel,pins = < &pioa 27 1 >; };
+   pc25b_tc1_tclk3: pc25b_tc1_tclk3 { atmel,pins = < &pioc 25 1 >; };
+   pc28b_tc1_tclk4: pc28b_tc1_tclk4 { atmel,pins = < &pioc 28 1 >; };
+   pc31b_tc1_tclk5: pc31b_tc1_tclk5 { atmel,pins = < &pioc 31 1 >; };
+   pc23b_tc1_tioa3: pc23b_tc1_tioa3 { atmel,pins = < &pioc 23 1 >; };
+   pc26b_tc1_tioa4: pc26b_tc1_tioa4 { atmel,pins = < &pioc 26 1 >; };
+   pc29b_tc1_tioa5: pc29b_tc1_tioa5 { atmel,pins = < &pioc 29 1 >; };
+   pc24b_tc1_tiob3: pc24b_tc1_tiob3 { atmel,pins = < &pioc 24 1 >; };
+   pc27b_tc1_tiob4: pc27b_tc1_tiob4 { atmel,pins = < &pioc 27 1 >; };
+   pc30b_tc1_tiob5: pc30b_tc1_tiob5 { atmel,pins = < &pioc 30 1 >; };
+   pc7b_tc2_tclk6: pc7b_tc2_tclk6 { atmel,pins = < &pioc 7 1 >; };
+   pc10b_tc2_tclk7: pc10b_tc2_tclk7 { atmel,pins = < &pioc 10 1 >; };
+   pc14b_tc2_tclk8: pc14b_tc2_tclk8 { atmel,pins = < &pioc 14 1 >; };
+   pc5b_tc2_tioa6: pc5b_tc2_tioa6 { atmel,pins = < &pioc 5 1 >; };
+   pc8b_tc2_tioa7: pc8b_tc2_tioa7 { atmel,pins = < &pioc 8 1 >; };
+   pc11b_tc2_tioa8: pc11b_tc2_tioa8 { atmel,pins = < &pioc 11 1 >; };
+   pc6b_tc2_tiob6: pc6b_tc2_tiob6 { atmel,pins = < &pioc 6 1 >; };
+   pc9b_tc2_tiob7: pc9b_tc2_tiob7 { atmel,pins = < &pioc 9 1 >; };
+   pc12b_tc2_tiob8: pc12b_tc2_tiob8 { atmel,pins = < &pioc 12 1 >; };
+   pe2b_tc3_tclk9: pe2b_tc3_tclk9 { atmel,pins = < &pioe 2 1 >; };
+   pe5b_tc3_tclk10: pe5b_tc3_tclk10 { atmel,pins = < &pioe 5 1 >; };
+   pd24c_tc3_tclk11: pd24c_tc3_tclk11 { atmel,pins = < &piod 24 2 >; };
+   pe0b_tc3_tioa9: pe0b_tc3_tioa9 { atmel,pins = < &pioe 0 1 >; };
+   pe3b_tc3_tioa10: pe3b_tc3_tioa10 { atmel,pins = < &pioe 3 1 >; };
+   pd21c_tc3_tioa11: pd21c_tc3_tioa11 { atmel,pins = < &piod 21 2 >; };
+   pe1b_tc3_tiob9: pe1b_tc3_tiob9 { atmel,pins = < &pioe 1 1 >; };
+   pe4b_tc3_tiob10: pe4b_tc3_tiob10 { atmel,pins = < &pioe 4 1 >; };
+   pd22c_tc3_tiob11: pd22c_tc3_tiob11 { atmel,pins = < &piod 22 2 >; };
+   pb3a_can0_rx0: pb3a_can0_rx0 { atmel,pins = < &piob 3 0 >; };
+   pb2a_can0_tx0: pb2a_can0_tx0 { atmel,pins = < &piob 2 0 >; };
+   pc12c_can1_rx1: pc12c_can1_rx1 { atmel,pins = < &pioc 12 2 >; };
+   pc14c_can1_tx1: pc14c_can1_tx1 { atmel,pins = < &pioc 14 2 >; };
+  };
+ };
+};
+# 13 "/home/crem/zephyrproject/zephyr/dts/arm/atmel/same70.dtsi" 2 3 4
+
+/ {
+ aliases {
+  watchdog0 = &wdt;
+ };
+
+ chosen {
+  zephyr,flash-controller = &eefc;
+ };
+
+ chosen {
+  zephyr,entropy = &trng;
+ };
+
+ cpus {
+  #address-cells = <1>;
+  #size-cells = <0>;
+
+  cpu0: cpu@0 {
+   device_type = "cpu";
+   compatible = "arm,cortex-m7";
+   reg = <0>;
+   #address-cells = <1>;
+   #size-cells = <1>;
+
+   mpu: mpu@e000ed90 {
+    compatible = "arm,armv7m-mpu";
+    reg = <0xe000ed90 0x40>;
+    arm,num-mpu-regions = <16>;
+   };
+  };
+ };
+
+ sram0: memory@20400000 {
+  compatible = "mmio-sram";
+ };
+
+ soc {
+  eefc: flash-controller@400e0c00 {
+   compatible = "atmel,sam-flash-controller";
+   label = "FLASH_CTRL";
+   reg = <0x400e0c00 0x200>;
+   interrupts = <6 0>;
+   peripheral-id = <6>;
+
+   #address-cells = <1>;
+   #size-cells = <1>;
+
+   flash0: flash@400000 {
+    compatible = "soc-nv-flash";
+    label = "FLASH_E70";
+
+    write-block-size = <16>;
+    erase-block-size = <8192>;
+   };
+
+  };
+
+  wdt: watchdog@400e1850 {
+   compatible = "atmel,sam-watchdog";
+   reg = <0x400e1850 0xc>;
+   interrupts = <4 0>;
+   peripheral-id = <4>;
+   label = "WATCHDOG_0";
+   status = "disabled";
+  };
+
+  twihs0: i2c@40018000 {
+   compatible = "atmel,sam-i2c-twihs";
+   clock-frequency = <100000>;
+   #address-cells = <1>;
+   #size-cells = <0>;
+   reg = <0x40018000 0x12B>;
+   interrupts = <19 0>;
+   peripheral-id = <19>;
+   label = "I2C_0";
+   status = "okay";
+   pinctrl-0 = <&pa4a_twihs0_twck0 &pa3a_twihs0_twd0>;
+  };
+
+  twihs1: i2c@4001c000 {
+   compatible = "atmel,sam-i2c-twihs";
+   clock-frequency = <100000>;
+   #address-cells = <1>;
+   #size-cells = <0>;
+   reg = <0x4001c000 0x12B>;
+   interrupts = <20 0>;
+   peripheral-id = <20>;
+   label = "I2C_1";
+   status = "disabled";
+   pinctrl-0 = <&pb5a_twihs1_twck1 &pb4a_twihs1_twd1>;
+  };
+
+  twihs2: i2c@40060000 {
+   compatible = "atmel,sam-i2c-twihs";
+   clock-frequency = <100000>;
+   #address-cells = <1>;
+   #size-cells = <0>;
+   reg = <0x40060000 0x12B>;
+   interrupts = <41 0>;
+   peripheral-id = <41>;
+   label = "I2C_2";
+   status = "disabled";
+   pinctrl-0 = <&pd28c_twihs2_twck2 &pd27c_twihs2_twd2>;
+  };
+
+  spi0: spi@40008000 {
+   compatible = "atmel,sam-spi";
+   #address-cells = <1>;
+   #size-cells = <0>;
+   reg = <0x40008000 0x4000>;
+   interrupts = <21 0>;
+   peripheral-id = <21>;
+   label = "SPI_0";
+   status = "disabled";
+   pinctrl-0 = <&pd20b_spi0_miso &pd21b_spi0_mosi &pd22b_spi0_spck>;
+  };
+
+  spi1: spi@40058000 {
+   compatible = "atmel,sam-spi";
+   #address-cells = <1>;
+   #size-cells = <0>;
+   reg = <0x40058000 0x4000>;
+   interrupts = <42 0>;
+   peripheral-id = <42>;
+   label = "SPI_1";
+   status = "disabled";
+   pinctrl-0 = <&pc26c_spi1_miso &pc27c_spi1_mosi &pc24c_spi1_spck>;
+  };
+
+  uart0: uart@400e0800 {
+   compatible = "atmel,sam-uart";
+   reg = <0x400e0800 0x100>;
+   interrupts = <7 1>;
+   peripheral-id = <7>;
+   status = "disabled";
+   label = "UART_0";
+   pinctrl-0 = <&pa9a_uart0_urxd0 &pa10a_uart0_utxd0>;
+  };
+
+  uart1: uart@400e0a00 {
+   compatible = "atmel,sam-uart";
+   reg = <0x400e0a00 0x100>;
+   interrupts = <8 1>;
+   peripheral-id = <8>;
+   status = "disabled";
+   label = "UART_1";
+  };
+
+  uart2: uart@400e1a00 {
+   compatible = "atmel,sam-uart";
+   reg = <0x400e1a00 0x100>;
+   interrupts = <44 1>;
+   peripheral-id = <44>;
+   status = "disabled";
+   label = "UART_2";
+  };
+
+  uart3: uart@400e1c00 {
+   compatible = "atmel,sam-uart";
+   reg = <0x400e1c00 0x100>;
+   interrupts = <45 1>;
+   peripheral-id = <45>;
+   status = "disabled";
+   label = "UART_3";
+  };
+
+  uart4: uart@400e1e00 {
+   compatible = "atmel,sam-uart";
+   reg = <0x400e1e00 0x100>;
+   interrupts = <46 1>;
+   peripheral-id = <46>;
+   status = "disabled";
+   label = "UART_4";
+  };
+
+  usart0: usart@40024000 {
+   compatible = "atmel,sam-usart";
+   reg = <0x40024000 0x100>;
+   interrupts = <13 0>;
+   peripheral-id = <13>;
+   status = "disabled";
+   label = "USART_0";
+   pinctrl-0 = <&pb0c_usart0_rxd0 &pb1c_usart0_txd0>;
+  };
+
+  usart1: usart@40028000 {
+   compatible = "atmel,sam-usart";
+   reg = <0x40028000 0x100>;
+   interrupts = <14 0>;
+   peripheral-id = <14>;
+   status = "disabled";
+   label = "USART_1";
+   pinctrl-0 = <&pa21a_usart1_rxd1 &pb4d_usart1_txd1>;
+  };
+
+  usart2: usart@4002c000 {
+   compatible = "atmel,sam-usart";
+   reg = <0x4002c000 0x100>;
+   interrupts = <15 0>;
+   peripheral-id = <15>;
+   status = "disabled";
+   label = "USART_2";
+   pinctrl-0 = <&pd15b_usart2_rxd2 &pd16b_usart2_txd2>;
+  };
+
+  afec0: adc@4003c000 {
+   compatible = "atmel,sam-afec";
+   reg = <0x4003c000 0x100>;
+   interrupts = <29 0>;
+   peripheral-id = <29>;
+   status = "disabled";
+   label = "ADC_0";
+   #io-channel-cells = <1>;
+   pinctrl-0 = <&pa8b_afec0_adtrg>;
+  };
+
+  afec1: adc@40064000 {
+   compatible = "atmel,sam-afec";
+   reg = <0x40064000 0x100>;
+   interrupts = <40 0>;
+   peripheral-id = <40>;
+   status = "disabled";
+   label = "ADC_1";
+   #io-channel-cells = <1>;
+   pinctrl-0 = <&pd9c_afec1_adtrg>;
+  };
+
+  dacc: dacc@40040000 {
+   compatible = "atmel,sam-dac";
+   reg = <0x40040000 0x100>;
+   interrupts = <30 0>;
+   peripheral-id = <30>;
+   status = "disabled";
+   label = "DACC";
+   #io-channel-cells = <1>;
+  };
+
+  pinctrl@400e0e00 {
+   compatible = "atmel,sam-pinctrl";
+   #address-cells = <1>;
+   #size-cells = <1>;
+   ranges = <0x400e0e00 0x400e0e00 0xa00>;
+
+   pioa: gpio@400e0e00 {
+    compatible = "atmel,sam-gpio";
+    reg = <0x400e0e00 0x190>;
+    interrupts = <10 1>;
+    peripheral-id = <10>;
+    label = "PORTA";
+    gpio-controller;
+    #gpio-cells = <2>;
+    #atmel,pin-cells = <2>;
+   };
+
+   piob: gpio@400e1000 {
+    compatible = "atmel,sam-gpio";
+    reg = <0x400e1000 0x190>;
+    interrupts = <11 1>;
+    peripheral-id = <11>;
+    label = "PORTB";
+    gpio-controller;
+    #gpio-cells = <2>;
+    #atmel,pin-cells = <2>;
+   };
+
+   pioc: gpio@400e1200 {
+    compatible = "atmel,sam-gpio";
+    reg = <0x400e1200 0x190>;
+    interrupts = <12 1>;
+    peripheral-id = <12>;
+    label = "PORTC";
+    gpio-controller;
+    #gpio-cells = <2>;
+    #atmel,pin-cells = <2>;
+   };
+
+   piod: gpio@400e1400 {
+    compatible = "atmel,sam-gpio";
+    reg = <0x400e1400 0x190>;
+    interrupts = <16 1>;
+    peripheral-id = <16>;
+    label = "PORTD";
+    gpio-controller;
+    #gpio-cells = <2>;
+    #atmel,pin-cells = <2>;
+   };
+
+   pioe: gpio@400e1600 {
+    compatible = "atmel,sam-gpio";
+    reg = <0x400e1600 0x190>;
+    interrupts = <17 1>;
+    peripheral-id = <17>;
+    label = "PORTE";
+    gpio-controller;
+    #gpio-cells = <2>;
+    #atmel,pin-cells = <2>;
+   };
+  };
+
+  pwm0: pwm0@40020000 {
+   compatible = "atmel,sam-pwm";
+   reg = <0x40020000 0x4000>;
+   interrupts = <31 0>;
+   peripheral-id = <31>;
+   status = "disabled";
+   label = "PWM_0";
+   prescaler = <10>;
+   divider = <1>;
+   #pwm-cells = <2>;
+  };
+
+  pwm1: pwm1@4005c000 {
+   compatible = "atmel,sam-pwm";
+   reg = <0x4005c000 0x4000>;
+   interrupts = <60 0>;
+   peripheral-id = <60>;
+   status = "disabled";
+   label = "PWM_1";
+   prescaler = <10>;
+   divider = <1>;
+   #pwm-cells = <2>;
+  };
+
+  usbhs: usbd@40038000 {
+   compatible = "atmel,sam-usbhs";
+   #address-cells = <1>;
+   #size-cells = <0>;
+   reg = <0x40038000 0x4000>;
+   interrupts = <34 0>;
+   interrupt-names = "usbhs";
+   maximum-speed = "high-speed";
+   num-bidir-endpoints = <10>;
+   peripheral-id = <34>;
+   status = "disabled";
+   label = "USBHS";
+  };
+
+  gmac: ethernet@40050000 {
+   compatible = "atmel,sam-gmac";
+   reg = <0x40050000 0x4000>;
+   peripheral-id = <39>;
+   interrupts = <39 0>, <66 0>, <67 0>;
+   interrupt-names = "gmac", "q1", "q2";
+   num-queues = <3>;
+   local-mac-address = [00 00 00 00 00 00];
+   label = "GMAC";
+   status = "disabled";
+
+   pinctrl-0 = <&pd0a_gmac_gtxck &pd1a_gmac_gtxen
+         &pd2a_gmac_gtx0 &pd3a_gmac_gtx1
+         &pd4a_gmac_grxdv &pd5a_gmac_grx0
+         &pd6a_gmac_grx1 &pd7a_gmac_grxer>;
+
+   mdio: mdio {
+    compatible = "atmel,sam-mdio";
+    label = "MDIO";
+    status = "disabled";
+    pinctrl-0 = <&pd8a_gmac_gmdc &pd9a_gmac_gmdio>;
+   };
+  };
+
+  tc0: tc@4000c000 {
+   compatible = "atmel,sam-tc";
+   reg = <0x4000c000 0x100>;
+   interrupts = <23 0
+          24 0
+          25 0>;
+   peripheral-id = <23 24 25>;
+   status = "disabled";
+   label = "TC0";
+   pinctrl-0 = <>;
+  };
+
+  tc1: tc@40010000 {
+   compatible = "atmel,sam-tc";
+   reg = <0x40010000 0x100>;
+   interrupts = <26 0
+          27 0
+          28 0>;
+   peripheral-id = <26 27 28>;
+   status = "disabled";
+   label = "TC1";
+   pinctrl-0 = <>;
+  };
+
+  tc2: tc@40014000 {
+   compatible = "atmel,sam-tc";
+   reg = <0x40014000 0x100>;
+   interrupts = <47 0
+          48 0
+          49 0>;
+   peripheral-id = <47 48 49>;
+   status = "disabled";
+   label = "TC2";
+   pinctrl-0 = <>;
+  };
+
+  tc3: tc@40054000 {
+   compatible = "atmel,sam-tc";
+   reg = <0x40054000 0x100>;
+   interrupts = <50 0
+          51 0
+          52 0>;
+   peripheral-id = <50 51 52>;
+   status = "disabled";
+   label = "TC3";
+   pinctrl-0 = <>;
+  };
+
+  trng: random@40070000 {
+   compatible = "atmel,sam-trng";
+   reg = <0x40070000 0x4000>;
+   interrupts = <57 0>;
+   peripheral-id = <57>;
+   status = "okay";
+   label = "TRNG";
+  };
+
+  xdmac: dma-controller@40078000 {
+   compatible = "atmel,sam-xdmac";
+   reg = <0x40078000 0x400>;
+   interrupts = <58 0>;
+   peripheral-id = <58>;
+   label = "DMA_0";
+   #dma-cells = <2>;
+  };
+
+  ssc: ssc@40004000 {
+   compatible = "atmel,sam-ssc";
+   reg = <0x40004000 0x400>;
+   interrupts = <22 0>;
+   peripheral-id = <22>;
+   label = "SSC_0";
+   status = "disabled";
+  };
+
+  can {
+   compatible = "bosch,m-can-base";
+   #address-cells = <1>;
+   #size-cells = <1>;
+   std-filter-elements = <28>;
+   ext-filter-elements = <8>;
+   rx-fifo0-elements = <3>;
+   rx-fifo1-elements = <3>;
+   rx-buffer-elements = <0>;
+   tx-buffer-elements = <1>;
+
+   can0: can@40030000 {
+    compatible = "atmel,sam-can";
+    #address-cells = <1>;
+    #size-cells = <0>;
+    reg = <0x40030000 0x100>;
+    reg-names = "m_can";
+    interrupts = <35 0>, <36 0>;
+    interrupt-names = "LINE_0", "LINE_1";
+    peripheral-id = <35>;
+    status = "disabled";
+    label = "CAN_0";
+   };
+
+   can1: can@40034000 {
+    compatible = "atmel,sam-can";
+    #address-cells = <1>;
+    #size-cells = <0>;
+    reg = <0x40034000 0x100>;
+    reg-names = "m_can";
+    interrupts = <37 0>, <38 0>;
+    interrupt-names = "LINE_0", "LINE_1";
+    peripheral-id = <37>;
+    status = "disabled";
+    label = "CAN_1";
+   };
+  };
+ };
+};
+
+&nvic {
+ arm,num-irq-priority-bits = <3>;
+};
+# 9 "/home/crem/zephyrproject/zephyr/dts/arm/atmel/same70q21.dtsi" 2 3 4
+# 1 "/home/crem/zephyrproject/zephyr/dts/arm/atmel/dma_atmel_same70.h" 1 3 4
+# 10 "/home/crem/zephyrproject/zephyr/dts/arm/atmel/same70q21.dtsi" 2 3 4
+
+/ {
+ sram0: memory@20400000 {
+  reg = <0x20400000 ((384) * 1024)>;
+ };
+
+ soc {
+  flash-controller@400e0c00 {
+   flash0: flash@400000 {
+    reg = <0x00400000 ((2048) * 1024)>;
+   };
+  };
+ };
+};
+# 12 "/home/crem/zephyrproject/zephyr/boards/arm/psn_board_jlink/psn_jlink.dts" 2
+# 1 "/home/crem/zephyrproject/zephyr/boards/arm/psn_board_jlink/psn_jlink.dtsi" 1
+# 10 "/home/crem/zephyrproject/zephyr/boards/arm/psn_board_jlink/psn_jlink.dtsi"
+/ {
+ aliases {
+  i2c-0 = &twihs0;
+  i2c-1 = &twihs1;
+  i2c-2 = &twihs2;
+  led0 = &green_led;
+  sw0 = &sw0_user_button;
+ };
+
+ chosen {
+  zephyr,console = &uart0;
+  zephyr,shell-uart = &uart0;
+  zephyr,sram = &sram0;
+  zephyr,flash = &flash0;
+  zephyr,code-partition = &slot0_partition;
+  zephyr,canbus = &can0;
+ };
+
+ leds {
+  compatible = "gpio-leds";
+  green_led: led_0 {
+   gpios = <&pioa 11 (1 << 0)>;
+   label = "User LED";
+  };
+ };
+
+ gpio_keys {
+  compatible = "gpio-keys";
+
+
+
+
+  sw0_user_button: button_1 {
+   label = "User Button";
+   gpios = <&pioa 12 ((1 << 4) | (1 << 0))>;
+  };
+ };
+};
+
+&cpu0 {
+ clock-frequency = <300000000>;
+};
+
+&afec0 {
+ status = "okay";
+};
+
+&afec1 {
+ status = "okay";
+};
+
+&dacc {
+ status = "okay";
+};
+
+&twihs0 {
+ status = "okay";
+ pinctrl-0 = <&pa4a_twihs0_twck0 &pa3a_twihs0_twd0 >;
+
+ ag416@38 {
+  compatible = "fujikaru,ag416";
+  reg = <0x38>;
+  label = "AG416";
+ };
+
+ };
+
+
+
+&spi0 {
+ status = "disabled";
+ pinctrl-0 = <&pc26c_spi1_miso &pc27c_spi1_mosi &pc24c_spi1_spck &pd27b_spi0_npcs3>;
+};
+&uart0 {
+ current-speed = <115200>;
+ status = "okay";
+
+};
+
+
+
+
+
+
+&wdt {
+ status = "okay";
+};
+
+zephyr_udc0: &usbhs {
+ status = "okay";
+};
+
+&gmac {
+ status = "okay";
+
+ phy: phy {
+  compatible = "ethernet-phy";
+  status = "okay";
+  address = <0>;
+  mdio = <&mdio>;
+ };
+};
+
+&mdio {
+ status = "okay";
+};
+
+&pwm0 {
+ status = "okay";
+};
+
+&flash0 {
+ partitions {
+  compatible = "fixed-partitions";
+  #address-cells = <1>;
+  #size-cells = <1>;
+
+
+
+
+
+  boot_partition: partition@0 {
+   label = "mcuboot";
+   reg = <0x0 0x00010000>;
+   read-only;
+  };
+
+
+  slot0_partition: partition@20000 {
+   label = "image-0";
+   reg = <0x0020000 0x000e0000>;
+  };
+
+
+  slot1_partition: partition@100000 {
+   label = "image-1";
+   reg = <0x00100000 0x000e0000>;
+  };
+
+
+  scratch_partition: partition@1e0000 {
+   label = "image-scratch";
+   reg = <0x001e0000 0x00020000>;
+  };
+ };
+};
+
+&ssc {
+ status = "okay";
+ label = "I2S_0";
+ dma-names = "rx", "tx";
+ dmas = <&xdmac 22 33>, <&xdmac 23 32>;
+ pinctrl-0 = <&pd24b_ssc_rf &pa22a_ssc_rk &pa10c_ssc_rd
+       &pb0d_ssc_tf &pb1d_ssc_tk &pb5d_ssc_td>;
+};
+
+&can0 {
+ status = "okay";
+ pinctrl-0 = <&pb3a_can0_rx0 &pb2a_can0_tx0>;
+ bus-speed = <125000>;
+ sjw = <1>;
+ sample-point = <875>;
+ bus-speed-data = <1000000>;
+ sjw-data = <1>;
+ sample-point-data = <875>;
+};
+# 13 "/home/crem/zephyrproject/zephyr/boards/arm/psn_board_jlink/psn_jlink.dts" 2
+
+/ {
+ model = "PSN_JLINK";
+ compatible = "atmel,psn_jlink", "atmel,same70q21", "atmel,same70";
+};
+# 1 "<command-line>" 2
+# 1 "/home/crem/zephyrproject/zephyr/misc/empty_file.c"
